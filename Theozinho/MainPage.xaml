@@ -8,7 +8,7 @@
                Aspect="AspectFill"/>
 
         <Label Text="Theo Bird"
-               TextColor="#2f2f36"
+               TextColor="Black"
                Margin="20,120,20,0"
                FontSize="50"
                LineHeight="1.5"
@@ -25,7 +25,7 @@
                      Clicked="BotaoIniciar"
                      HeightRequest="50"
                      CornerRadius="25"
-                     BackgroundColor="#2f2f36"
+                     BackgroundColor="Black"
                      TextColor="White"
                      BorderWidth="1"
                      BorderColor="White"

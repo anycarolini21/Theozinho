@@ -5,7 +5,7 @@
 
                 <Grid>
                   <Grid.GestureRecognizers>
-            <TapGestureRecognizer Tapped="OnGridClicked"/>
+            <TapGestureRecognizer Tapped="Clicado"/>
             </Grid.GestureRecognizers>
                <Image
                      x:Name="FundoJogo"
@@ -40,7 +40,7 @@
                      />
                
                 <Frame x:Name="frameGameOver"
-               BackgroundColor="#99000000"
+               BackgroundColor="Black"
                HorizontalOptions="Fill"
                VerticalOptions="Fill">
                <Frame.GestureRecognizers>

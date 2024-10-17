@@ -122,7 +122,7 @@ public partial class JogoPage : ContentPage
             return false;
 
     }
-    void OnGridClicked(object s, TappedEventArgs a)
+    void Clicado(object s, TappedEventArgs a)
     {
         estaPulando = true;
     }
