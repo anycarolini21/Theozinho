@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Theozinho.MainPage">
+ <Grid>
+        <Image Source="theodoro.png"
+               Opacity=".8"
+               Aspect="AspectFill"/>
+
+        <Label Text="Theo Bird"
+               TextColor="#2f2f36"
+               Margin="20,120,20,0"
+               FontSize="50"
+               LineHeight="1.5"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"
+               VerticalOptions="Start"/>
+
+        <VerticalStackLayout
+            VerticalOptions="End"
+            Spacing="15"
+            Margin="15,0,15,40">
+
+            <Button  Text="Iniciar"
+                     Clicked="BotaoIniciar"
+                     HeightRequest="50"
+                     CornerRadius="25"
+                     BackgroundColor="#2f2f36"
+                     TextColor="White"
+                     BorderWidth="1"
+                     BorderColor="White"
+                     Margin="0,0,0,10"
+                     FontSize="18"/>
+        </VerticalStackLayout>
+    </Grid>
+
+
+</ContentPage>
+
+</ContentPage>

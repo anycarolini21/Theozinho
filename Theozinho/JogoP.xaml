@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Theozinho.JogoPage">
+
+                <Grid>
+                  <Grid.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnGridClicked"/>
+            </Grid.GestureRecognizers>
+               <Image
+                     x:Name="FundoJogo"
+                     Source="fundo.jogo.jpg"
+                     Opacity=".8"
+                     Aspect="Fill"
+                     VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand"/>
+
+               <Image
+                    x:Name="ImgTheo"
+                    Source="theodoro.png"
+                    WidthRequest="60"
+                    HeightRequest="90"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"/>
+
+               <Image
+                     x:Name="CanoBaixo"
+                     Source="canodois.png"
+                     WidthRequest="230"
+                     VerticalOptions="End"
+                     HorizontalOptions="End"
+                     />
+
+               <Image
+                     x:Name="CanoCima"
+                     Source="canoum.png"
+                     WidthRequest="230"
+                     VerticalOptions="Start"
+                     HorizontalOptions="End"
+                     />
+               
+                <Frame x:Name="frameGameOver"
+               BackgroundColor="#99000000"
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill">
+               <Frame.GestureRecognizers>
+               <TapGestureRecognizer Tapped="GameOverClicado"/>
+               </Frame.GestureRecognizers>
+                <Image Source="gameover.png"
+                HeightRequest="195"
+                WidthRequest="160" />
+
+            </Frame>       
+               
+               
+               
+
+    
+            </Grid>
+</ContentPage>
