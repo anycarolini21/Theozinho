@@ -24,27 +24,28 @@
                     HorizontalOptions="Start"/>
 
                <Image
-                     x:Name="CanoBaixo"
-                     Source="canodois.png"
-                     WidthRequest="230"
+                     x:Name="CanoCima"
+                     Source="canoumm.png"
+                     WidthRequest="55"
                      VerticalOptions="End"
                      HorizontalOptions="End"
                      />
 
                <Image
-                     x:Name="CanoCima"
-                     Source="canoum.png"
-                     WidthRequest="230"
+                     x:Name="CanoBaixo"
+                     Source="canodoiss.png"
+                     WidthRequest="55"
                      VerticalOptions="Start"
                      HorizontalOptions="End"
                      />
                
                 <Frame x:Name="frameGameOver"
+                IsVisible="false"
                BackgroundColor="Black"
                HorizontalOptions="Fill"
                VerticalOptions="Fill">
                <Frame.GestureRecognizers>
-               <TapGestureRecognizer Tapped="GameOverClicado"/>
+               <TapGestureRecognizer Tapped="GameOverCliclado"/>
                </Frame.GestureRecognizers>
                 <Image Source="gameover.png"
                 HeightRequest="195"

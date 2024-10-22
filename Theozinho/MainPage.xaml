@@ -7,7 +7,7 @@
                Opacity=".8"
                Aspect="AspectFill"/>
 
-        <Label Text="Theo Bird"
+        <Label Text=""
                TextColor="Black"
                Margin="20,120,20,0"
                FontSize="50"

@@ -79,14 +79,16 @@ public partial class JogoPage : ContentPage
 			CanoBaixo.TranslationY = CanoCima.TranslationY + aberturaMinima + CanoBaixo.HeightRequest;
 
         }
-
     }
+
     void GameOverCliclado(object s, TappedEventArgs a)
     {
         frameGameOver.IsVisible = false;
         Inicializar();
         Desenhar();
     }
+
+    
     void Inicializar()
     {
         estaMorto = false;
@@ -98,6 +100,7 @@ public partial class JogoPage : ContentPage
         {
             if (VerificaColisaoTeto() ||
             VerificaColisaoChao())
+            VerificaColisaoCanoCima()
             {
                 return true;
             }
@@ -126,4 +129,23 @@ public partial class JogoPage : ContentPage
     {
         estaPulando = true;
     }
+    bool VerificaColisaoCanoCima()
+    {
+        var posHPardal= (larguraJanela/2)- (ImgTheo.WidthRequest/2);
+        var posVPardal= (larguraJanela/2)- (ImgTheo.HeightRequest/2) + DngPardal.TranslationY;
+        if (posHPardal >= Math.Abs (imgcanodoiss.TranslationX)- imgcanodoiss.WidthRequest &&
+        if posHPardal <= Math.Abs (imgcanodoiss.TranslationX)+ imgcanodoiss.WidthRequest &&
+        posVPardal <=Imgcanodoiss.HeightRequest + Imgcanodoiss.TranslationY)
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
+     }
+     bool VerificaColisaoCanoBaixo()
+     {
+
+     }
 }
+
