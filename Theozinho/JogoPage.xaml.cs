@@ -4,7 +4,7 @@ public partial class JogoPage : ContentPage
 {
     const int aberturaMinima = 200;
     const int gravidade = 30;
-    const int tempoEntreFrames = 25;
+    const int tempoEntreFrames = 50;
     bool estaMorto = false;
     double larguraJanela = 0;
     double alturaJanela = 0;
@@ -13,6 +13,7 @@ public partial class JogoPage : ContentPage
     int tempoPulando = 0;
     bool estaPulando = false;
     const int forcaPulo = 60;
+    const int tamanhoMinimoPassagem = 200;
 
     public JogoPage()
     {
@@ -98,9 +99,7 @@ public partial class JogoPage : ContentPage
     {
         if (!estaMorto)
         {
-            if (VerificaColisaoTeto() ||
-            VerificaColisaoChao())
-            VerificaColisaoCanoCima()
+            return (!estaMorto && (VerificaColisaoChao() || VerificaColisaoTeto() || VerificaColisaoCano()));
             {
                 return true;
             }
@@ -108,6 +107,15 @@ public partial class JogoPage : ContentPage
         }
         return false;
     }
+
+    bool VerificaColisaoCano()
+   {
+    if (VerificaColisaoCanoBaixo() || VerificaColisaoCanoCima())
+      return true;
+    else
+      return false;
+   }
+
     bool VerificaColisaoTeto()
     {
         var minY = -alturaJanela / 2;
@@ -130,22 +138,34 @@ public partial class JogoPage : ContentPage
         estaPulando = true;
     }
     bool VerificaColisaoCanoCima()
-    {
-        var posHPardal= (larguraJanela/2)- (ImgTheo.WidthRequest/2);
-        var posVPardal= (larguraJanela/2)- (ImgTheo.HeightRequest/2) + DngPardal.TranslationY;
-        if (posHPardal >= Math.Abs (imgcanodoiss.TranslationX)- imgcanodoiss.WidthRequest &&
-        if posHPardal <= Math.Abs (imgcanodoiss.TranslationX)+ imgcanodoiss.WidthRequest &&
-        posVPardal <=Imgcanodoiss.HeightRequest + Imgcanodoiss.TranslationY)
-        {
-            return true;
-        }
-        else{
-            return false;
-        }
-     }
-     bool VerificaColisaoCanoBaixo()
-     {
+   {
+    var posicaoHorizontalPardal = (larguraJanela - 50) - (imgTheodoro.WidthRequest / 2);
+    var posicaoVerticalPardal   = (alturaJanela / 2) - (imgTheodoro.HeightRequest / 2) + imgTheodoro.TranslationY;
 
-     }
+    if (
+         posicaoHorizontalPardal >= Math.Abs(imgCanodoiss.TranslationX) - imgCanodoiss.WidthRequest &&
+         posicaoHorizontalPardal <= Math.Abs(imgCanodoiss.TranslationX) + imgCanodoiss.WidthRequest &&
+         posicaoVerticalPardal   <= imgCanodoiss.HeightRequest + imgCanodoiss.TranslationY
+       )
+      return true;
+    else
+      return false;
+  }
+     bool VerificaColisaoCanoBaixo()
+    {
+    var posicaoHorizontalPardal = larguraJanela - 50 - imgTheodoro.WidthRequest / 2;
+    var posicaoVerticalPardal   = (alturaJanela / 2) + (imgTheodoro.HeightRequest / 2) + imgTheodoro.TranslationY;
+
+    var yMaxCano = imgCanodoiss.HeightRequest + imgCanodoiss.TranslationY + tamanhoMinimoPassagem;
+
+    if (
+         posicaoHorizontalPardal >= Math.Abs(imgCanodoiss.TranslationX) - imgCanodoiss.WidthRequest &&
+         posicaoHorizontalPardal <= Math.Abs(imgCanodoiss.TranslationX) + imgCanodoiss.WidthRequest &&
+         posicaoVerticalPardal   >= yMaxCano
+       )
+      return true;
+    else
+      return false;
+  }
 }
 
