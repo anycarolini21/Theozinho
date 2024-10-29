@@ -139,13 +139,13 @@ public partial class JogoPage : ContentPage
     }
     bool VerificaColisaoCanoCima()
    {
-    var posicaoHorizontalPardal = (larguraJanela - 50) - (imgTheodoro.WidthRequest / 2);
-    var posicaoVerticalPardal   = (alturaJanela / 2) - (imgTheodoro.HeightRequest / 2) + imgTheodoro.TranslationY;
+    var posicaoHorizontalPardal = (larguraJanela - 50) - (ImgTheo.WidthRequest / 2);
+    var posicaoVerticalPardal   = (alturaJanela / 2) - (ImgTheo.HeightRequest / 2) + ImgTheo.TranslationY;
 
     if (
-         posicaoHorizontalPardal >= Math.Abs(imgCanodoiss.TranslationX) - imgCanodoiss.WidthRequest &&
-         posicaoHorizontalPardal <= Math.Abs(imgCanodoiss.TranslationX) + imgCanodoiss.WidthRequest &&
-         posicaoVerticalPardal   <= imgCanodoiss.HeightRequest + imgCanodoiss.TranslationY
+         posicaoHorizontalPardal >= Math.Abs(CanoCima.TranslationX) - CanoCima.WidthRequest &&
+         posicaoHorizontalPardal <= Math.Abs(CanoCima.TranslationX) + CanoCima.WidthRequest &&
+         posicaoVerticalPardal   <= CanoCima.HeightRequest + CanoCima.TranslationY
        )
       return true;
     else
@@ -153,14 +153,14 @@ public partial class JogoPage : ContentPage
   }
      bool VerificaColisaoCanoBaixo()
     {
-    var posicaoHorizontalPardal = larguraJanela - 50 - imgTheodoro.WidthRequest / 2;
-    var posicaoVerticalPardal   = (alturaJanela / 2) + (imgTheodoro.HeightRequest / 2) + imgTheodoro.TranslationY;
+    var posicaoHorizontalPardal = larguraJanela - 50 - ImgTheo.WidthRequest / 2;
+    var posicaoVerticalPardal   = (alturaJanela / 2) + (ImgTheo.HeightRequest / 2) + ImgTheo.TranslationY;
 
-    var yMaxCano = imgCanodoiss.HeightRequest + imgCanodoiss.TranslationY + tamanhoMinimoPassagem;
+    var yMaxCano = CanoBaixo.HeightRequest + CanoBaixo.TranslationY + tamanhoMinimoPassagem;
 
     if (
-         posicaoHorizontalPardal >= Math.Abs(imgCanodoiss.TranslationX) - imgCanodoiss.WidthRequest &&
-         posicaoHorizontalPardal <= Math.Abs(imgCanodoiss.TranslationX) + imgCanodoiss.WidthRequest &&
+         posicaoHorizontalPardal >= Math.Abs(CanoBaixo.TranslationX) - CanoBaixo.WidthRequest &&
+         posicaoHorizontalPardal <= Math.Abs(CanoBaixo.TranslationX) + CanoBaixo.WidthRequest &&
          posicaoVerticalPardal   >= yMaxCano
        )
       return true;
